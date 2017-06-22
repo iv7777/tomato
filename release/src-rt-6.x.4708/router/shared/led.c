@@ -227,6 +227,7 @@ int do_led(int which, int mode)
 	static int r7000[]      = {  13, 255,   255,  255,  255,  -15,  255,   -17, -18,   12};
 	static int ac15[]       = { 255,  -0,   255,  255,  255,   -6,  255,   -14, 255,   -2};
 	static int dir868[]     = { 255, 255,     3,  255,  255,   -0,  255,   255, 255,  255};
+	static int ea6400[]     = { 255, 255,     8,  255,  255,  255,  255,   255, 255,  255};
 	static int ea6700[]     = { 255, 255,    -6,   -6,  255,  255,  255,   255, 255,  255};
 	static int ea6900[]     = { 255, 255,     8,  255,  255,    6,  255,   255, 255,  255};
 	static int ws880[]      = {   0, 255,   -12,  255,  255,    6,    1,    14,  14,    6};
@@ -498,6 +499,9 @@ int do_led(int which, int mode)
 			c = (mode) ? 2 : 3;
 		} else
 			b = r1d[which];
+		break;
+	case MODEL_EA6400: //need to be verified
+		b = ea6400[which];
 		break;
 	case MODEL_EA6700:
 	case MODEL_EA6900: //need to be verified

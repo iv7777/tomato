@@ -189,9 +189,10 @@ ifeq ($(ASUS_TRX),BUFFALO)
 	ctools/trx_asus -i image/linux-lzma.trx -r WZR1750,3.0.0.4,image/tomato-WZR1750-$(V1)$(V2)-$(current_BUILD_DESC).trx
 endif
 
-#for linksys EA series -- EA6700 EA6500v2 EA6900
+#for linksys EA series -- EA6400 EA6700 EA6500v2 EA6900
 ifeq ($(ASUS_TRX),LINKSYS)
 	ctools/trx_asus -i image/linux-lzma.trx -r EA6900,3.0.0.4,image/tomato-EA6900-$(V1)$(V2)-$(current_BUILD_DESC).trx
+	ctools/trx_asus -i image/linux-lzma.trx -r EA6400,3.0.0.4,image/tomato-EA6400-$(V1)$(V2)-$(current_BUILD_DESC).trx
 	ctools/trx_asus -i image/linux-lzma.trx -r EA6700,3.0.0.4,image/tomato-EA6700-$(V1)$(V2)-$(current_BUILD_DESC).trx
 	ctools/trx_asus -i image/linux-lzma.trx -r EA6500v2,3.0.0.4,image/tomato-EA6500v2-$(V1)$(V2)-$(current_BUILD_DESC).trx
 endif
@@ -1107,7 +1108,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "BUFFALO ARM Builds"
 	@echo "wzr1750e      WZR-1750DHP build VPN"
 	@echo "LINKSYS ARM Builds"
-	@echo "ea6700e       EA6700/EA6500v2/EA6900 build VPN"
+	@echo "ea6700e       EA6400/EA6700/EA6500v2/EA6900 build VPN"
 endif
 	@echo ""
 	@echo "..etc..      other build configs"
