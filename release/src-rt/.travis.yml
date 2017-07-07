@@ -9,21 +9,8 @@ env:
   global:
     - V2=-140
   matrix:
-    - TARGET=n DIR=src KERN=K24 V1=5x EXT=trx
-    - TARGET=w DIR=src KERN=K24 V1=5x EXT=trx
-    - TARGET=e DIR=src KERN=K24 V1=5x EXT=trx
-    - TARGET=v2e DIR=src-rt KERN=K26 V1=RT-N5x- EXT=chk
     - TARGET=r2e DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2c DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2d DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2g DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2t DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2b DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2v DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2m DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2i DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2j DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
-    - TARGET=r2f DIR=src-rt KERN=K26 V1=RT-N5x- EXT='{trx,bin}'
+
   # AIO build time is longer then free version Travis time limit (50 min)
   # - TARGET=v2z DIR=src-rt KERN=K26 V1=RT-N5x- EXT=chk
   # - TARGET=r2z DIR=src-rt KERN=K26 V1=RT-N5x- EXT=trx
