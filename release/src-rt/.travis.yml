@@ -3,7 +3,7 @@ dist: trusty # nano requires gettext-0.18.3 now not available in precise
 sudo: false
 language: c
 compiler: gcc
-git: { depth: 4 }
+git: { depth: 3 }
 
 env:
   global:
