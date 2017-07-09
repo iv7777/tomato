@@ -116,8 +116,8 @@ function showData()
 	}
 	E('ccnt-total').innerHTML = totalConnections;
 		
-	obwrate = nvram.qos_obw * 1000;
-	ibwrate = nvram.qos_ibw * 1000;
+	obwrate = nvram.wan_qos_obw * 1000;
+	ibwrate = nvram.wan_qos_ibw * 1000;
 	
 	if(toggle == false)
 	{
