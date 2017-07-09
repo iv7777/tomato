@@ -54,8 +54,8 @@ void start_pptp_client(void)
     unlink("/tmp/ppp");
     mkdir("/tmp/ppp",0700);
     mkdir("/etc/vpn",0700);
-    ok |= symlink("/sbin/rc", "/etc/vpn/pptpc_ip-up");
-    ok |= symlink("/sbin/rc", "/etc/vpn/pptpc_ip-down");
+    ok |= symlink("/rom/etc/vpn/ip-up", "/etc/vpn/pptpc_ip-up");
+    ok |= symlink("/rom/etc/vpn/ip-down", "/etc/vpn/pptpc_ip-down");
     // Make sure symbolic link exists
     sprintf(buffer, "/etc/vpn/pptpclient");
     unlink(buffer);
