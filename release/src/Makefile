@@ -1140,6 +1140,12 @@ ifeq ($(CONFIG_LINUX26),y)
 	@$(MAKE) bin OPENVPN=y BBEXTRAS=y EBTABLES=y IPV6SUPP=y B=E BUILD_DESC="Max" USB="" NOCAT=y NFS=y SNMP=y DNSCRYPT=y PPTPD=y TOR=y IPSEC=y MULTIWAN=y
 endif
 
+## Shadowsocks build for router with 8MB flash without USB Support
+s:
+ifeq ($(CONFIG_LINUX26),y)
+	@$(MAKE) bin OPENVPN=y EBTABLES=y IPV6SUPP=y B=E BUILD_DESC="SS" USB="" DNSCRYPT=y PPTPD=y MULTIWAN=y
+endif
+
 ## SD-VPN - Only k24
 w:
 ifneq ($(CONFIG_LINUX26),y)
@@ -1195,6 +1201,9 @@ r2v:
 
 r2m:
 	@$(MAKE) m MIPS32=r2
+
+r2s:
+	@$(MAKE) s MIPS32=r2
 
 #Linksys E-series witk 60K NVRAM builds
 n60z:
@@ -1270,6 +1279,9 @@ n64v:
 
 n64m:
 	@$(MAKE) r2m NVRAM_SIZE=64 LINKSYS_E_64k=y
+
+n64s:
+	@$(MAKE) r2s NVRAM_SIZE=64 LINKSYS_E_64k=y
 
 
 #Linksys E-Series with 4MB Flash (Max Flashsize=3866624)
@@ -1496,6 +1508,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "n64o         Linksys E-series(64k Nvram) build Mega-VPN"
 	@echo "n64v         Linksys E-series(64k Nvram) build IPv6-VPN"
 	@echo "n64m         Linksys E-series(64k Nvram) build Max"
+	@echo "n64s         Linksys E-series(64k Nvram) build Shadowsocks"
 	@echo "       Routers with wl_high module"
 	@echo "rtn53        Asus RT-N53 with wl_high module (dualband support)"
 	@echo "e2500        Linksys E2500 with wl_high module (dualband support)"

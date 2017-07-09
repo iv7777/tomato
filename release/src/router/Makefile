@@ -598,6 +598,18 @@ ifeq ($(TCONFIG_L7PAT),y)
 	cp layer7/squished/*.pat $(TARGETDIR)/rom/etc/l7-protocols
 endif
 
+# ShadowSocks
+
+	@mkdir -p $(TARGETDIR)/opt/etc
+	@mkdir -p $(TARGETDIR)/opt/etc/init.d
+	@mkdir -p $(TARGETDIR)/opt/bin
+	cp shadowsocks/opt/etc/init.d/* $(TARGETDIR)/opt/etc/init.d
+	cp shadowsocks/opt/bin/* $(TARGETDIR)/opt/bin
+	cp shadowsocks/opt/lib/* $(TARGETDIR)/lib
+	chmod +x $(TARGETDIR)/opt/etc/init.d/*
+	chmod +x $(TARGETDIR)/opt/bin/*
+	chmod +x $(TARGETDIR)/lib/*
+
 ifeq ($(TCONFIG_PPTPD),y)
 	@mkdir -p $(TARGETDIR)/rom/etc/vpn
 	cp rc/vpn/* $(TARGETDIR)/rom/etc/vpn
