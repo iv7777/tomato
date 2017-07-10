@@ -1128,6 +1128,12 @@ else
 	@$(MAKE) bin OPENVPN=y PPTPD=y BBEXTRAS=y B=V BUILD_DESC="VPN" USB=""  SNMP=y TCPDUMP="$(TCPDUMP)" TCPDUMP="$(TCPDUMP)"
 endif
 
+## Shadowsocks build for router with 8MB flash without USB Support
+ss:
+ifeq ($(CONFIG_LINUX26),y)
+	@$(MAKE) bin OPENVPN=y USERPPTP=y PPTPD=y BBEXTRAS=y EBTABLES=y IPV6SUPP=y B=M BUILD_DESC="SS" USB="" NOCAT=y DNSSEC=y DNSCRYPT=y
+endif
+
 ## Make the "Small VPN with no USB support" build
 vs:
 ifeq ($(CONFIG_LINUX26),y)
@@ -1199,6 +1205,9 @@ r2u:
 r2v:
 	@$(MAKE) v MIPS32=r2
 
+r2ss:
+	@$(MAKE) ss MIPS32=r2
+
 r2vs:
 	@$(MAKE) vs MIPS32=r2
 
@@ -1266,6 +1275,9 @@ n64s:
 
 n64v:
 	@$(MAKE) r2v NVRAM_SIZE=64 LINKSYS_E_64k=y
+
+n64ss:
+	@$(MAKE) r2ss NVRAM_SIZE=64 LINKSYS_E_64k=y
 
 
 #Linksys E-Series with 4MB Flash (Max Flashsize=3866624)
@@ -1463,6 +1475,7 @@ ifeq ($(CONFIG_LINUX26),y)
 	@echo "n64m         Linksys E-series build (64KB NVRAM, standard plus extras)"
 	@echo "n64e         Linksys E-series build (64KB NVRAM, standard plus VPN and extras)"
 	@echo "n64nc        Linksys E-series build (64KB NVRAM, standard plus extras, plus VPN, plus NOCAT)"
+	@echo "n64ss        Linksys E-series build (64kB NVRAM, Shadowsocks)"
 	@echo "n64s         Linksys E-series build (64KB NVRAM, no USB support)"
 	@echo "n64v         Linksys E-series build (64KB NVRAM, VPN with no USB support)"
 
