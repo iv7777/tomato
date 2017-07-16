@@ -2,7 +2,7 @@
 
 ENABLED=yes
 PROCS=ss-server
-ARGS="-c /etc/ss-server.json"
+ARGS="-c /etc/ss-server.json -u"
 PREARGS=""
 DESC=$PROCS
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
