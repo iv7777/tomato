@@ -49,7 +49,7 @@ const defaults_t defaults[] = {
 
 	// LAN TCP/IP parameters
 	{ "lan_dhcp",			"0"				},	// DHCP client [static|dhcp]
-	{ "lan_proto",			"static"			},	// DHCP server [static|dhcp]  //Barry add 2004 09 16
+	{ "lan_proto",			"dhcp"			},	// DHCP server [static|dhcp]  //Barry add 2004 09 16
 	{ "lan_ipaddr",			"192.168.1.1"	},	// LAN IP address
 	{ "lan_netmask",		"255.255.255.0"	},	// LAN netmask
 	{ "lan_wins",			""				},	// x.x.x.x x.x.x.x ...
@@ -581,7 +581,7 @@ const defaults_t defaults[] = {
 	{ "https_crt",			""				},
 	{ "http_root",			"1"				},	// 0 - deny, 1 - Allow
 	{ "web_wl_filter",		"0"				},	// Allow/Deny Wireless Access Web
-	{ "web_css",			"Tomato"			},
+	{ "web_css",			"modern"			},
 	{ "web_dir",			"default"			},  // jffs, opt, tmp or default (/www)
 	{ "ttb_css",			"example"			},	//Tomato Themes Base
 	{ "web_svg",			"1"				},
